@@ -1,5 +1,5 @@
 from django.contrib import admin
-from.models import Testimonial,Demo,Expert,Service,Brand,Award
+from.models import Appointment, Testimonial,Demo,Expert,Service,Brand,Award,Appointment,Contact
 # Register your models here.
 
 @admin.register(Testimonial)
@@ -37,4 +37,16 @@ class BrandModelAdmin(admin.ModelAdmin):
 class AwardModelAdmin(admin.ModelAdmin):
     list_display=[
         'title','image',
+    ]
+
+@admin.register(Appointment)
+class AppointmentModelAdmin(admin.ModelAdmin):
+    list_display=[
+        'name','email',
+    ]
+
+@admin.register(Contact)
+class ContactModelAdmin(admin.ModelAdmin):
+    list_display=[
+        'name','email',
     ]
