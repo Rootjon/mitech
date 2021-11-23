@@ -1,4 +1,6 @@
 from django.db import models
+from django.db.models.base import Model
+from django.urls import reverse
 
 # Create your models here.
 
@@ -68,6 +70,64 @@ class Contact(models.Model):
     name = models.CharField(max_length=50)
     email = models.CharField(max_length=50)
     department = models.CharField(max_length=50)
+    message = models.TextField()
+    
+    def __str__(self):
+        return self.name
+
+class Design(models.Model):
+    title=models.CharField(max_length=100)
+    description=models.TextField()
+    image=models.ImageField(upload_to='awards')
+
+    def __str__(self):
+        return self.title
+    
+    
+class Post(models.Model):
+    title=models.CharField(max_length=100)
+    slug = models.SlugField()
+    description=models.TextField()
+    image=models.ImageField(upload_to='blog')
+    creation=models.DateTimeField(auto_now_add=True)
+    def __str__(self):
+        return self.title
+    
+    
+    def get_absolute_url(self):
+        return reverse("bussenes:details", kwargs={
+            "slug": self.slug
+            })
+        
+    @property
+    def comment_count(self):
+        return Comment.objects.filter(post=self).count()
+        
+class Comment(models.Model):
+    
+    post = models.ForeignKey(Post, on_delete= models.CASCADE, related_name='comments')
+    name = models.CharField(max_length=80)
+    email = models.CharField(max_length=100)
+    body = models.TextField()
+    creation = models.DateTimeField(auto_now_add=True)
+    approve = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.name
+    
+class Album(models.Model):
+    title=models.CharField(max_length=100)
+    description=models.TextField()
+    image=models.ImageField(upload_to='album')
+
+    def __str__(self):
+        return self.title
+    
+class Contactus(models.Model):
+    
+    name = models.CharField(max_length=50)
+    email = models.CharField(max_length=50)
+    subject = models.CharField(max_length=50)
     message = models.TextField()
     
     def __str__(self):
