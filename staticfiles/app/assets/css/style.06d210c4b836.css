@@ -350,14 +350,14 @@ select {
   outline: none;
   border: 1px solid #f8f8f8;
   border-radius: 5px;
-  background: #f8f8f8 url("../images/icons/selector-icon.webp") no-repeat center right 20px;
+  background: #f8f8f8 url("../images/icons/selector-icon.d9519db8ff06.webp") no-repeat center right 20px;
   background-color: #f8f8f8;
   -moz-appearance: none;
   -webkit-appearance: none;
 }
 
 select:focus {
-  background: #f8f8f8 url("../images/icons/selector-icon.webp") no-repeat center right 20px !important;
+  background: #f8f8f8 url("../images/icons/selector-icon.d9519db8ff06.webp") no-repeat center right 20px !important;
 }
 
 .fixed-bg {
@@ -742,7 +742,7 @@ input[type="checkbox"] {
   background-size: cover;
   z-index: 3;
   position: relative;
-  background-image: url(../images/bg/title-bar-01-bg.webp);
+  background-image: url("../images/bg/title-bar-01-bg.510f7a9a1303.webp");
 }
 
 @media only screen and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -3637,7 +3637,7 @@ input[type="checkbox"] {
   transition: all 0.7s cubic-bezier(0.645, 0.045, 0.355, 1);
   z-index: 9999;
   background: rgba(0, 0, 0, 0.7);
-  cursor: url(../images/icons/light-close.webp) 16 16, pointer;
+  cursor: url("../images/icons/light-close.a515907dae3f.webp") 16 16, pointer;
   visibility: hidden;
   opacity: 0;
 }
@@ -4951,14 +4951,14 @@ ul.footer-widget__horizontal-list li {
 =============================================*/
 .cta-bg-image_one {
   background-color: #454545;
-  background-image: url(../images/patterns/mitech-call-to-action-image-global.webp);
+  background-image: url("../images/patterns/mitech-call-to-action-image-global.7ebdd14308c9.webp");
   background-repeat: no-repeat;
   background-position: top 35% right -68px;
 }
 
 .cta-bg-image_two {
   background-color: #f6f2ed;
-  background-image: url(../images/patterns/mitech-home-appointment-call-to-action-bg-image.webp);
+  background-image: url("../images/patterns/mitech-home-appointment-call-to-action-bg-image.dcf8fe8b526f.webp");
   background-repeat: no-repeat;
   background-position: top right;
 }
@@ -10141,7 +10141,7 @@ ol {
 =          32. Project Css           =
 ====================================*/
 .projectinfotechno-bg {
-  background-image: url(../images/patterns/mitech-home-infotechno-case-study-section-bg.webp);
+  background-image: url("../images/patterns/mitech-home-infotechno-case-study-section-bg.1c84babd142d.webp");
   background-repeat: no-repeat;
   background-position: bottom left;
 }
@@ -10503,11 +10503,11 @@ ol {
 }
 
 .contact-form__two select:focus {
-  background: #fff url("../images/icons/selector-icon.webp") no-repeat center right 20px !important;
+  background: #fff url("../images/icons/selector-icon.d9519db8ff06.webp") no-repeat center right 20px !important;
 }
 
 .appointment-contact-bg {
-  background: url(../images/bg/home-appointment-contact-bg-image.webp);
+  background: url("../images/bg/home-appointment-contact-bg-image.124df1167a2c.webp");
   background-repeat: no-repeat;
   background-position: center right;
 }
@@ -12350,7 +12350,7 @@ blockquote {
 .appointment-hero-bg {
   background-color: transparent;
   background-repeat: no-repeat;
-  background-image: url("../images/hero/home-appointment-hero-bg-image.webp");
+  background-image: url("../images/hero/home-appointment-hero-bg-image.0cfa0a6e5c0f.webp");
   background-size: cover;
   background-position: 50% 50%;
 }
@@ -12901,7 +12901,7 @@ blockquote {
 =      40. About Us pages Css           =
 =======================================*/
 .about-us-bg {
-  background-image: url(../images/bg/contact-us-01-hero-bg.webp);
+  background-image: url("../images/bg/contact-us-01-hero-bg.d4e7f6ad8091.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -13011,7 +13011,7 @@ blockquote {
 .about-resources-wrapper {
   padding: 40px 0;
   background-color: #f8f8f8;
-  background-image: url(../images/bg/mitech-slider-cybersecurity-global-image.webp);
+  background-image: url("../images/bg/mitech-slider-cybersecurity-global-image.d3e4433308ee.webp");
   background-repeat: no-repeat;
   background-position: center right 40px;
 }
