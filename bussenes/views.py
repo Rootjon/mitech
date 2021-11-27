@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.db.models import Count
+from django.db.models import Q
 from.forms import AppointmentForm,ContactForm,CommentForm,ContactusForm
 from django.http import HttpResponseRedirect
 from.models import Brand, Testimonial,Demo,Expert,Service,Award,Appointment,Design,Post,Album
@@ -49,7 +50,7 @@ def home (request):
     }
     return render(request,'app/home.html',context)
 
-def contact(request):
+def contactt(request):
     
     if request.method == 'POST':
         
@@ -156,12 +157,12 @@ def contact (request):
     
     if request.method == 'POST':
         
-        appoint_form = ContactusForm(request.POST)
+        contacts_form = ContactusForm(request.POST)
         
         
-        if appoint_form.is_valid():
+        if contacts_form.is_valid():
             
-            appoint_form.save()
+            contacts_form.save()
            
             # redirect to a new URL:
             return HttpResponseRedirect(request.path_info)
@@ -173,10 +174,87 @@ def contact (request):
     
     # if a GET (or any other method) we'll create a blank form
     else:
-        appoint_form = ContactusForm()
+        contacts_form = ContactusForm()
 
 
     context={
         
     }
     return render(request,'app/contact.html',context)
+
+def search_blog(request):
+    queryset1 = Testimonial.objects.all()
+    queryset2 = Demo.objects.all()
+    queryset3 = Expert.objects.all()
+    queryset4 = Service.objects.all()
+    queryset5 = Award.objects.all()
+    queryset6 = Design.objects.all()
+    queryset7 = Post.objects.all()
+    queryset8 = Album.objects.all()
+    brands=Brand.objects.all()
+    
+    
+    query = request.GET.get('q')
+    
+    
+
+
+    if query:
+        queryset1=queryset1.filter(
+            Q(title__icontains=query) | Q(designation__icontains=query) |
+            Q(description__icontains=query)
+
+        ).distinct()
+        
+        queryset2=queryset2.filter(
+            Q(title__icontains=query) | Q(designation__icontains=query) |
+            Q(description__icontains=query)
+
+        ).distinct()
+        
+        queryset3=queryset3.filter(
+            Q(title__icontains=query) | Q(designation__icontains=query) |
+            Q(social_facebook__icontains=query) | Q(social_github__icontains=query)
+
+        ).distinct()
+        
+       
+        queryset4=queryset4.filter(
+            Q(title__icontains=query) | 
+            Q(description__icontains=query)
+
+        ).distinct()
+        queryset5=queryset5.filter(
+            Q(title__icontains=query) | 
+            Q(description__icontains=query)
+
+        ).distinct()
+        queryset6=queryset6.filter(
+            Q(title__icontains=query) |
+            Q(description__icontains=query)
+
+        ).distinct()
+        queryset7=queryset7.filter(
+            Q(title__icontains=query) |
+            Q(description__icontains=query)
+
+        ).distinct()
+        queryset8=queryset8.filter(
+            Q(title__icontains=query) |
+            Q(description__icontains=query)
+
+        ).distinct()
+       
+    context = {
+        "queryset1":queryset1,
+        "queryset2":queryset2,
+        "queryset3":queryset3,
+        "queryset4":queryset4,
+        "queryset5":queryset5,
+        "queryset6":queryset6,
+        "queryset7":queryset7,
+        "queryset8":queryset8,
+        'query':query,
+        'brands':brands,
+    }
+    return render(request,'app/search.html', context)

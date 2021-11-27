@@ -255,8 +255,8 @@
                             </div>
 
                             <div class="header-search-form ">
-                                <form action="#" class="search-form-top style-03 ">
-                                    <input class="search-field" type="text" placeholder="Search…">
+                                <form action="{% url 'bussenes:search' %}" class="search-form-top style-03 ">
+                                    <input class="search-field" name="q" type="text" placeholder="Search…">
                                     <button class="search-submit">
                                         <i class="search-btn-icon fa fa-search"></i>
                                     </button>
