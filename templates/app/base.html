@@ -463,11 +463,19 @@
                 </div>
             </div>
         </div>
+      
+            
+        
+       
+        
         <div class="search-overlay__inner">
             <div class="search-overlay__body">
                 <div class="search-overlay__form">
-                    <form action="#">
-                        <input type="text" placeholder="Search">
+                    <form action="{% url 'bussenes:search' %}">
+                        <input type="text" name="q" placeholder="Search">
+                        <button class="search-submit">
+                            <i class="search-btn-icon fa fa-search"></i>
+                        </button>
                     </form>
                 </div>
             </div>
