@@ -57,8 +57,8 @@
                             <div class="header-right-inner" id="hidden-icon-wrapper">
                                 <!-- Header Search Form -->
                                 <div class="header-search-form d-md-none d-block">
-                                    <form action="#" class="search-form-top">
-                                        <input class="search-field" type="text" placeholder="Search…">
+                                    <form action="{% url 'bussenes:search' %}" class="search-form-top">
+                                        <input class="search-field" name="q" type="text" placeholder="Search…">
                                         <button class="search-submit">
                                             <i class="search-btn-icon fa fa-search"></i>
                                         </button>
@@ -473,9 +473,7 @@
                 <div class="search-overlay__form">
                     <form action="{% url 'bussenes:search' %}">
                         <input type="text" name="q" placeholder="Search">
-                        <button class="search-submit">
-                            <i class="search-btn-icon fa fa-search"></i>
-                        </button>
+                       
                     </form>
                 </div>
             </div>
